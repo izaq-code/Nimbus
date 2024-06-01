@@ -1,4 +1,4 @@
-# Nimbus
+![Logo Nimbus](Img/logo-nimbus.png)# Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
 
