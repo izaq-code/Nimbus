@@ -1,5 +1,7 @@
 
-<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="200"> # Nimbus
+<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="100" align="right">
+
+# Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
 
