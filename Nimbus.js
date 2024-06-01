@@ -1,3 +1,5 @@
+document.documentElement.setAttribute('nimbus', '');
+
 class Nimbus {
     constructor() {
         this.Nimbusmap = Nimbusmap;
@@ -10,7 +12,6 @@ class Nimbus {
             const nimbusValue = element.getAttribute('nimbus');
 
             if (nimbusValue) {
-
                 const styles = nimbusValue.split(',').map(style => style.trim());
 
                 styles.forEach(style => {
@@ -29,6 +30,7 @@ class Nimbus {
         });
     }
 }
+
 
 const cores = {
     red: "#ff0000",
