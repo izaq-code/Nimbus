@@ -1,4 +1,6 @@
+Claro! Aqui está o README atualizado com suas adições:
 
+```markdown
 # Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
@@ -26,11 +28,13 @@ Para começar a usar o Nimbus, siga estas etapas simples:
     <div id="conteudo" class="t-width-cent-4 t-height-cent-1 minha-classe background-yellow borderad-cent-10 ">
 
         <h1 class="color-red ts-cent-20">ola</h1>
+        
     </div>
     
     <div  class="t-width-cent-4 t-height-px-10 background-blue padd-px-2 borderad-px-2">
 
-        <h1 class="color-white ts-cent-30">eaiiii</h1>
+        <h1 class="color-white ts-cent-30">eai</h1>
+
     </div>
     <!-- Link para o arquivo JavaScript -->
     <script src="Nimbus.js"></script>
@@ -55,6 +59,12 @@ Você pode ajustar o tamanho da fonte utilizando classes como `ts-px-{valor}` pa
 ### Bordas e margens
 
 Altere a borda e a margem dos elementos com as classes `borderad-px-{valor}`, `borderad-cent-{valor}` para definir em pixels e porcentagem, respectivamente. Para definir o preenchimento, utilize `padd-px-{valor}` e `padd-cent-{valor}`.
+
+### Alinhamento e Centralização
+
+Facilite o alinhamento dos itens com a classe `aling_item`, que utiliza flexbox para centralizar vertical e horizontalmente.
+
+Para centralizar elementos horizontalmente, utilize a classe `center`.
 
 ## Contribuição
 
