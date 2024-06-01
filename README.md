@@ -1,4 +1,5 @@
-![Logo Nimbus](Img/logo-nimbus.png)# Nimbus
+
+<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="200"> # Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
 

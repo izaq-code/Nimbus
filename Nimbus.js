@@ -1,30 +1,3 @@
-const logoPath = 'Img/logo-nimbus.png'; // Caminho para o arquivo de imagem
-
-// Função para carregar a imagem e convertê-la para base64
-function convertImageToBase64(path, callback) {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = function() {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        const dataURL = canvas.toDataURL('image/png');
-        callback(dataURL);
-    };
-    img.src = path;
-}
-
-// Chamada da função para converter a imagem para base64
-convertImageToBase64(logoPath, function(base64Img) {
-    // Agora você tem a imagem convertida para base64 na variável base64Img
-    console.log(base64Img);
-    // Aqui você pode prosseguir com o restante do seu código, por exemplo:
-    // document.documentElement.style.setProperty('--logo', `url(${base64Img})`);
-});
-
-
 document.documentElement.setAttribute('nimbus', '');
 
 class Nimbus {
