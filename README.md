@@ -1,6 +1,4 @@
-Claro! Aqui está o README atualizado com suas adições:
 
-```markdown
 # Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
