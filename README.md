@@ -1,4 +1,3 @@
-
 # Nimbus
 
 **Aviso: Esta biblioteca está em desenvolvimento ativo.**
@@ -10,7 +9,7 @@ Nimbus é uma biblioteca JavaScript que permite alterar o estilo de elementos HT
 Para começar a usar o Nimbus, siga estas etapas simples:
 
 1. Inclua o arquivo JavaScript Nimbus em seu projeto.
-2. Defina as classes de estilo desejadas em seu HTML.
+2. Adicione o atributo `Nimbus` aos elementos HTML que deseja estilizar e defina as classes de estilo desejadas como valores do atributo.
 3. Desfrute da magia do Nimbus alterando dinamicamente o estilo do seu HTML!
 
 ```html
@@ -19,21 +18,22 @@ Para começar a usar o Nimbus, siga estas etapas simples:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Biblioteca</title>
+    <title>Nimbus</title>
 </head>
-<body class="background-red">
+<body>
     <!-- Div onde o conteúdo será injetado -->
-    <div id="conteudo" class="t-width-cent-4 t-height-cent-1 minha-classe background-yellow borderad-cent-10 ">
+    <div Nimbus="color-red, background-blue, t-height-px-10, aling_item, center, t-width-cent-1, aling_item_center, borderad-px-5">
 
-        <h1 class="color-red ts-cent-20">ola</h1>
+        <h1 Nimbus="color-red, ts-cent-20">ola</h1>
         
     </div>
     
-    <div  class="t-width-cent-4 t-height-px-10 background-blue padd-px-2 borderad-px-2">
+<div Nimbus="t-height-px-10, t-width-cent-1, background-blue, aling_item_center, aling_item">
 
-        <h1 class="color-white ts-cent-30">eai</h1>
+    <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
 
-    </div>
+</div>
+
     <!-- Link para o arquivo JavaScript -->
     <script src="Nimbus.js"></script>
 </body>
@@ -60,9 +60,7 @@ Altere a borda e a margem dos elementos com as classes `borderad-px-{valor}`, `b
 
 ### Alinhamento e Centralização
 
-Facilite o alinhamento dos itens com a classe `aling_item`, que utiliza flexbox para centralizar vertical e horizontalmente.
-
-Para centralizar elementos horizontalmente, utilize a classe `center`.
+Facilite o alinhamento dos itens com a classe `aling_item`, que utiliza flexbox para centralizar vertical e horizontalmente. Para centralizar elementos horizontalmente, utilize a classe `center`.
 
 ## Contribuição
 
