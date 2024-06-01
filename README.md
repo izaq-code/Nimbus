@@ -1,5 +1,5 @@
 
-<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="100" align="right" style="margin-top: -10px;">
+<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="100" align="right" style="margin-top: -50px;">
 
 # Nimbus
 
