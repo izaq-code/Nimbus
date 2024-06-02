@@ -103,6 +103,12 @@ Nimbusmap['center'] = [
     { property: 'right', value: '0' }
 ];
 
+Nimbusmap['aling-div'] = [
+    { property: 'display', value: 'flex' },
+    { property: 'align-items', value: 'center' },
+    { property: 'justify-content', value: 'center' },
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     const nimbus = new Nimbus();
     nimbus.applyStyles();
