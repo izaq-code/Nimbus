@@ -1,5 +1,5 @@
 
-<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="80" align="right" >
+<img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="80" align="right">
 
 # Nimbus
 
@@ -7,7 +7,7 @@
 
 Nimbus é uma biblioteca JavaScript que permite alterar o estilo de elementos HTML com base em classes predefinidas. Com o Nimbus, você pode facilmente personalizar a aparência de seus elementos HTML simplesmente adicionando classes específicas.
 
-## Como usar
+## Como Usar
 
 Para começar a usar o Nimbus, siga estas etapas simples:
 
@@ -31,11 +31,11 @@ Para começar a usar o Nimbus, siga estas etapas simples:
         
     </div>
     
-<div Nimbus="t-height-px-10, t-width-cent-1, background-blue, aling_item_center, aling_item">
+    <div Nimbus="t-height-px-10, t-width-cent-1, background-blue, aling_item_center, aling_item">
 
-    <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
+        <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
 
-</div>
+    </div>
 
     <!-- Link para o arquivo JavaScript -->
     <script src="Nimbus.js"></script>
@@ -51,19 +51,31 @@ Nimbus oferece uma variedade de cores predefinidas que podem ser aplicadas como 
 
 ### Tamanhos
 
-É possível definir largura e altura em pixels ou em porcentagem. Use as classes `t-width-px-{valor}`, `t-height-px-{valor}` para definir em pixels e `t-width-cent-{valor}`, `t-height-cent-{valor}` para definir em porcentagem.
+Você pode definir largura e altura em pixels ou em porcentagem. Use as classes `t-width-px-{valor}`, `t-height-px-{valor}` para definir em pixels e `t-width-cent-{valor}`, `t-height-cent-{valor}` para definir em porcentagem.
 
-### Tamanho da fonte
+### Tamanho da Fonte
 
-Você pode ajustar o tamanho da fonte utilizando classes como `ts-px-{valor}` para pixels e `ts-cent-{valor}` para porcentagem.
+Ajuste o tamanho da fonte utilizando classes como `ts-px-{valor}` para pixels e `ts-cent-{valor}` para porcentagem.
 
-### Bordas e margens
+### Bordas e Margens
 
 Altere a borda e a margem dos elementos com as classes `borderad-px-{valor}`, `borderad-cent-{valor}` para definir em pixels e porcentagem, respectivamente. Para definir o preenchimento, utilize `padd-px-{valor}` e `padd-cent-{valor}`.
 
 ### Alinhamento e Centralização
 
 Facilite o alinhamento dos itens com a classe `aling_item`, que utiliza flexbox para centralizar vertical e horizontalmente. Para centralizar elementos horizontalmente, utilize a classe `center`.
+
+### Grid
+
+O Nimbus oferece suporte a layouts de grade flexíveis através do sistema de grade CSS. Com as classes fornecidas, você pode criar layouts de grade responsivos e adaptáveis. Por exemplo, você pode definir o número de colunas e o tamanho de cada coluna usando classes como `grid-columns-{min}px-{fr}`.
+
+### Max-Height e Max-Width
+
+Além de definir tamanhos específicos para elementos, o Nimbus também permite limitar a altura e largura máximas de elementos. Isso é útil para garantir que determinados elementos não ultrapassem certos limites de tamanho, especialmente em layouts responsivos.
+
+### Gap
+
+O espaçamento entre os elementos é uma consideração importante no design de layout. O Nimbus permite definir o espaçamento entre os elementos usando a classe `gap-px-{valor}` para definir em pixels ou `gap-cent-{valor}` para definir em porcentagem.
 
 ## Contribuição
 
