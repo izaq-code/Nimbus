@@ -71,7 +71,7 @@ O Nimbus oferece suporte a layouts de grade flexíveis através do sistema de gr
 
 ### Max-Height e Max-Width
 
-Além de definir tamanhos específicos para elementos, o Nimbus também permite limitar a altura e largura máximas de elementos. Isso é útil para garantir que determinados elementos não ultrapassem certos limites de tamanho, especialmente em layouts responsivos.
+Além de definir tamanhos específicos para elementos, o Nimbus também permite limitar a altura e largura máximas de elementos usando o `max-height-px-${i}`//`max-height-cent-${i}` ou `max-width-px-${i}`//`max-width-cent-${i}`. Isso é útil para garantir que determinados elementos não ultrapassem certos limites de tamanho, especialmente em layouts responsivos.
 
 ### Gap
 
@@ -80,3 +80,4 @@ O espaçamento entre os elementos é uma consideração importante no design de 
 ## Contribuição
 
 Sinta-se à vontade para contribuir com este projeto abrindo issues ou enviando pull requests. Toda contribuição é bem-vinda!
+
