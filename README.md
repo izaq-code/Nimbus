@@ -1,4 +1,3 @@
-
 <img src="Img/logo-nimbus.png" alt="Logo Nimbus" width="80" align="right">
 
 # Nimbus
@@ -11,7 +10,10 @@ Nimbus é uma biblioteca JavaScript que permite alterar o estilo de elementos HT
 
 Para começar a usar o Nimbus, siga estas etapas simples:
 
-1. Inclua o arquivo JavaScript Nimbus em seu projeto.
+1. Inclua o script Nimbus no seu projeto, adicionando a seguinte linha no seu HTML:
+   ```html
+   <script src="https://izaq-code.github.io/Nimbus/Nimbus.js"></script>
+   ```
 2. Adicione o atributo `Nimbus` aos elementos HTML que deseja estilizar e defina as classes de estilo desejadas como valores do atributo.
 3. Desfrute da magia do Nimbus alterando dinamicamente o estilo do seu HTML!
 
@@ -38,7 +40,7 @@ Para começar a usar o Nimbus, siga estas etapas simples:
     </div>
 
     <!-- Link para o arquivo JavaScript -->
-    <script src="Nimbus.js"></script>
+    <script src="https://izaq-code.github.io/Nimbus/Nimbus.js"></script>
 </body>
 </html>
 ```
@@ -80,4 +82,3 @@ O espaçamento entre os elementos é uma consideração importante no design de 
 ## Contribuição
 
 Sinta-se à vontade para contribuir com este projeto abrindo issues ou enviando pull requests. Toda contribuição é bem-vinda!
-
