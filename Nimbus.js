@@ -66,7 +66,7 @@ for (let cor in cores) {
     Nimbusmap[`color-${cor}`] = { property: 'color', value: cores[cor] };
 }
 
-for (let i = 1; i <= 9999; i++) {
+for (let i = 1; i <= 1000; i++) {
     Nimbusmap[`padd-px-${i}`] = { property: 'padding', value: `${i * 10}px` };
     Nimbusmap[`padd-cent-${i}`] = { property: 'padding', value: `${i * 10}%` };
     Nimbusmap[`marg-px-${i}`] = { property: 'margin', value: `${i * 10}px` };
@@ -112,8 +112,8 @@ Nimbusmap['aling-div'] = [
 
 //grid
 
-for (let i = 1; i <= 9999; i++) {
-    for (let j = 1; j <= 9999; j++) {
+for (let i = 1; i <= 1000; i++) {
+    for (let j = 1; j <= 1000; j++) {
         Nimbusmap[`grid-columns-${i}-${j}`] = [
             { property: 'display', value: 'grid' },
             { property: 'grid-template-columns', value: `repeat(auto-fit, minmax(${i * 10}px, ${j}fr))` }
@@ -121,7 +121,7 @@ for (let i = 1; i <= 9999; i++) {
     }
 }
 
-for (let i = 1; i <= 9999; i++) {
+for (let i = 1; i <= 1000; i++) {
     Nimbusmap[`gap-px-${i}`] = { property: 'gap', value: `${i * 10}px` };
     Nimbusmap[`gap-cent-${i}`] = { property: 'gap', value: `${i * 10}%` };
     Nimbusmap[`max-height-px-${i}`] = { property: 'max-height', value: `${i * 10}px` };
