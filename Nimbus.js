@@ -2,7 +2,7 @@ document.documentElement.setAttribute('nimbus', '');
 
 class Nimbus {
     constructor() {
-        this.Nimbusmap = Nimbusmap;
+        this.Nimbusmap = {};
     }
 
     applyStyles() {
@@ -10,27 +10,60 @@ class Nimbus {
 
         elements.forEach(element => {
             const nimbusValue = element.getAttribute('nimbus');
+            const usedClasses = nimbusValue.split(',').map(style => style.trim());
 
-            if (nimbusValue) {
-                const styles = nimbusValue.split(',').map(style => style.trim());
-
-                styles.forEach(style => {
-                    const mapping = this.Nimbusmap[style];
-                    if (mapping) {
-                        if (Array.isArray(mapping)) {
-                            mapping.forEach(m => {
-                                element.style[m.property] = m.value;
-                            });
-                        } else {
-                            element.style[mapping.property] = mapping.value;
-                        }
-                    }
-                });
-            }
+            usedClasses.forEach(style => {
+                if (!this.Nimbusmap[style]) {
+                    this.processStyle(style);
+                }
+                const mapping = this.Nimbusmap[style];
+                if (mapping) {
+                    mapping.forEach(m => {
+                        element.style[m.property] = m.value;
+                    });
+                }
+            });
         });
     }
-}
 
+    processStyle(style) {
+        if (style.startsWith('background-')) {
+            const color = style.split('-')[1];
+            this.Nimbusmap[style] = [{ property: 'backgroundColor', value: cores[color] }];
+        } else if (style.startsWith('color-')) {
+            const color = style.split('-')[1];
+            this.Nimbusmap[style] = [{ property: 'color', value: cores[color] }];
+        } else if (style.startsWith('t-height-px-')) {
+            const height = style.split('-')[3];
+            this.Nimbusmap[style] = [{ property: 'height', value: `${parseInt(height)}px` }];
+        } else if (style.startsWith('t-width-cent-')) {
+            const width = style.split('-')[3];
+            this.Nimbusmap[style] = [{ property: 'width', value: `${parseInt(width)}%` }];
+        } else if (style.startsWith('aling_item_center')) {
+            this.Nimbusmap[style] = [
+                { property: 'justifyContent', value: 'center' },
+                { property: 'alignItems', value: 'center' }
+            ];
+        } else if (style.startsWith('aling_item')) {
+            this.Nimbusmap[style] = [{ property: 'display', value: 'flex' }];
+        } else if (style.startsWith('center')) {
+            this.Nimbusmap[style] = [
+                { property: 'margin', value: 'auto' },
+                { property: 'position', value: 'absolute' },
+                { property: 'top', value: '0' },
+                { property: 'bottom', value: '0' },
+                { property: 'left', value: '0' },
+                { property: 'right', value: '0' }
+            ];
+        } else if (style.startsWith('borderad-px-')) {
+            const radius = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'borderRadius', value: `${parseInt(radius)}px` }];
+        } else if (style.startsWith('borderad-cent-')) {
+            const radius = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'borderRadius', value: `${parseInt(radius)}%` }];
+        } 
+    }
+}
 
 const cores = {
     red: "#ff0000",
@@ -59,79 +92,7 @@ const cores = {
     lilac: "#c8a2c8"
 };
 
-const Nimbusmap = {};
-
-for (let cor in cores) {
-    Nimbusmap[`background-${cor}`] = { property: 'backgroundColor', value: cores[cor] };
-    Nimbusmap[`color-${cor}`] = { property: 'color', value: cores[cor] };
-}
-
-for (let i = 1; i <= 1000; i++) {
-    Nimbusmap[`padd-px-${i}`] = { property: 'padding', value: `${i * 10}px` };
-    Nimbusmap[`padd-cent-${i}`] = { property: 'padding', value: `${i * 10}%` };
-    Nimbusmap[`marg-px-${i}`] = { property: 'margin', value: `${i * 10}px` };
-    Nimbusmap[`marg-percent-${i}`] = { property: 'margin', value: `${i * 10}%` };
-    Nimbusmap[`marg-top-px-${i}`] = { property: 'marginTop', value: `${i * 10}px` };
-    Nimbusmap[`marg-top-cent-${i}`] = { property: 'marginTop', value: `${i * 10}%` };
-    Nimbusmap[`marg-bottom-px-${i}`] = { property: 'marginBottom', value: `${i * 10}px` };
-    Nimbusmap[`marg-bottom-cent-${i}`] = { property: 'marginBottom', value: `${i * 10}%` };
-    Nimbusmap[`marg-left-px-${i}`] = { property: 'marginLeft', value: `${i * 10}px` };
-    Nimbusmap[`marg-left-cent-${i}`] = { property: 'marginLeft', value: `${i * 10}%` };
-    Nimbusmap[`marg-right-px-${i}`] = { property: 'marginRight', value: `${i * 10}px` };
-    Nimbusmap[`marg-right-cent-${i}`] = { property: 'marginRight', value: `${i * 10}%` };
-    Nimbusmap[`t-width-px-${i}`] = { property: 'width', value: `${i * 10}px` };
-    Nimbusmap[`t-height-px-${i}`] = { property: 'height', value: `${i * 10}px` };
-    Nimbusmap[`t-width-cent-${i}`] = { property: 'width', value: `${i * 10}%` };
-    Nimbusmap[`t-height-cent-${i}`] = { property: 'height', value: `${i * 10}%` };
-    Nimbusmap[`borderad-px-${i}`] = { property: 'borderRadius', value: `${i * 10}px` };
-    Nimbusmap[`borderad-cent-${i}`] = { property: 'borderRadius', value: `${i * 10}%` };
-    Nimbusmap[`ts-px-${i}`] = { property: 'fontSize', value: `${i * 10}px` };
-    Nimbusmap[`ts-cent-${i}`] = { property: 'fontSize', value: `${i * 10}%` };
-}
-
-Nimbusmap['aling_item'] = { property: 'display', value: 'flex' };
-Nimbusmap['aling_item_center'] = [
-    { property: 'justifyContent', value: 'center' },
-    { property: 'alignItems', value: 'center' }
-];
-Nimbusmap['center'] = [
-    { property: 'margin', value: 'auto' },
-    { property: 'position', value: 'absolute' },
-    { property: 'top', value: '0' },
-    { property: 'bottom', value: '0' },
-    { property: 'left', value: '0' },
-    { property: 'right', value: '0' }
-];
-
-Nimbusmap['aling-div'] = [
-    { property: 'display', value: 'flex' },
-    { property: 'align-items', value: 'center' },
-    { property: 'justify-content', value: 'center' },
-];
-
-
-//grid
-
-for (let i = 1; i <= 1000; i++) {
-    for (let j = 1; j <= 1000; j++) {
-        Nimbusmap[`grid-columns-${i}-${j}`] = [
-            { property: 'display', value: 'grid' },
-            { property: 'grid-template-columns', value: `repeat(auto-fit, minmax(${i * 10}px, ${j}fr))` }
-        ];
-    }
-}
-
-for (let i = 1; i <= 1000; i++) {
-    Nimbusmap[`gap-px-${i}`] = { property: 'gap', value: `${i * 10}px` };
-    Nimbusmap[`gap-cent-${i}`] = { property: 'gap', value: `${i * 10}%` };
-    Nimbusmap[`max-height-px-${i}`] = { property: 'max-height', value: `${i * 10}px` };
-    Nimbusmap[`max-height-cent-${i}`] = { property: 'max-height', value: `${i * 10}%` };
-    Nimbusmap[`max-width-px-${i}`] = { property: 'max-width', value: `${i * 10}px` };
-    Nimbusmap[`max-width-cent-${i}`] = { property: 'max-width', value: `${i * 10}%` };
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const nimbus = new Nimbus();
     nimbus.applyStyles();
 });
-
