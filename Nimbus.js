@@ -36,10 +36,16 @@ class Nimbus {
         } else if (style.startsWith('t-height-px-')) {
             const height = style.split('-')[3];
             this.Nimbusmap[style] = [{ property: 'height', value: `${parseInt(height)}px` }];
-        } else if (style.startsWith('t-width-cent-')) {
+        } else if (style.startsWith('t-height-cent-')) {
+            const height = style.split('-')[3];
+            this.Nimbusmap[style] = [{ property: 'height', value: `${parseInt(height)}%` }];
+        }  else if (style.startsWith('t-width-cent-')) {
             const width = style.split('-')[3];
             this.Nimbusmap[style] = [{ property: 'width', value: `${parseInt(width)}%` }];
-        } else if (style.startsWith('aling_item_center')) {
+        }  else if (style.startsWith('t-width-px-')) {
+            const width = style.split('-')[3];
+            this.Nimbusmap[style] = [{ property: 'width', value: `${parseInt(width)}px` }];
+        }else if (style.startsWith('aling_item_center')) {
             this.Nimbusmap[style] = [
                 { property: 'justifyContent', value: 'center' },
                 { property: 'alignItems', value: 'center' }
