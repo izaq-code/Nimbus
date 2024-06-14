@@ -39,20 +39,26 @@ class Nimbus {
         } else if (style.startsWith('t-height-cent-')) {
             const height = style.split('-')[3];
             this.Nimbusmap[style] = [{ property: 'height', value: `${parseInt(height)}%` }];
-        }  else if (style.startsWith('t-width-cent-')) {
+        } else if (style.startsWith('t-width-cent-')) {
             const width = style.split('-')[3];
             this.Nimbusmap[style] = [{ property: 'width', value: `${parseInt(width)}%` }];
-        }  else if (style.startsWith('t-width-px-')) {
+        } else if (style.startsWith('t-width-px-')) {
             const width = style.split('-')[3];
             this.Nimbusmap[style] = [{ property: 'width', value: `${parseInt(width)}px` }];
-        }else if (style.startsWith('aling_item_center')) {
+        } else if (style.startsWith('ts-px-')) {
+            const size = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'fontSize', value: `${parseInt(size)}px` }];
+        } else if (style.startsWith('ts-cent-')) {
+            const size = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'fontSize', value: `${parseInt(size)}%` }];
+        } else if (style === 'align_item_center') {
             this.Nimbusmap[style] = [
                 { property: 'justifyContent', value: 'center' },
                 { property: 'alignItems', value: 'center' }
             ];
-        } else if (style.startsWith('aling_item')) {
+        } else if (style === 'align_item') {
             this.Nimbusmap[style] = [{ property: 'display', value: 'flex' }];
-        } else if (style.startsWith('center')) {
+        } else if (style === 'center') {
             this.Nimbusmap[style] = [
                 { property: 'margin', value: 'auto' },
                 { property: 'position', value: 'absolute' },
@@ -67,7 +73,24 @@ class Nimbus {
         } else if (style.startsWith('borderad-cent-')) {
             const radius = style.split('-')[2];
             this.Nimbusmap[style] = [{ property: 'borderRadius', value: `${parseInt(radius)}%` }];
-        } 
+        } else if (style.startsWith('gap-px-')) {
+            const gap = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'gap', value: `${parseInt(gap)}px` }];
+        } else if (style.startsWith('gap-cent-')) {
+            const gap = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'gap', value: `${parseInt(gap)}%` }];
+        } else if (style.startsWith('marg-px-')) {
+            const margin = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'margin', value: `${parseInt(margin)}px` }];
+        } else if (style.startsWith('marg-cent-')) {
+            const margin = style.split('-')[2];
+            this.Nimbusmap[style] = [{ property: 'margin', value: `${parseInt(margin)}%` }];
+        } else if (style.startsWith('grid-columns-')) {
+            const parts = style.split('-');
+            const minWidth = parts[2];
+            const fraction = parts[3];
+            this.Nimbusmap[style] = [{ property: 'gridTemplateColumns', value: `repeat(auto-fit, minmax(${minWidth}px, ${fraction}fr))` }];
+        }
     }
 }
 
