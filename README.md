@@ -27,13 +27,13 @@ Para começar a usar o Nimbus, siga estas etapas simples:
 </head>
 <body>
     <!-- Div onde o conteúdo será injetado -->
-    <div Nimbus="color-red, background-blue, t-height-px-10, aling_item, center, t-width-cent-1, aling_item_center, borderad-px-5">
+    <div Nimbus="color-red, background-blue, t-height-px-100, aling_item, center, t-width-cent-10, aling_item_center, borderad-px-50">
 
         <h1 Nimbus="color-red, ts-cent-20">ola</h1>
         
     </div>
     
-    <div Nimbus="t-height-px-10, t-width-cent-1, background-blue, aling_item_center, aling_item">
+    <div Nimbus="t-height-px-100, t-width-cent-10, background-blue, aling_item_center, aling_item">
 
         <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
 
