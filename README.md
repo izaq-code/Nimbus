@@ -22,29 +22,30 @@ Para começar a usar o Nimbus, siga estas etapas simples:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nimbus</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
     <!-- Div onde o conteúdo será injetado -->
-    <div Nimbus="color-red, background-blue, t-height-px-100, align-item, center, t-width-cent-10, align-item-center, borderad-px-50">
-        <h1 Nimbus="color-red, ts-cent-20">ola</h1>
+    <div Nimbus="color-red, background-blue, t-height-px-100, align-item, center, t-width-cent-10, align-item-center, borderad-px-50" >
+      <h1 Nimbus="color-red, ts-cent-20">ola</h1>
     </div>
-    
+
     <div Nimbus="t-height-px-100, t-width-cent-10, background-blue, align-item-center, align-item">
-        <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
+      <h1 Nimbus="ts-cent-10, color-white">Nimbus</h1>
     </div>
 
     <h1>Exemplo de inputs Nimbus</h1>
-    <div Nimbus="in{Nome do Usuário}"></div>
-    <div Nimbus="in{E-mail do Usuário}"></div>
+    <div Nimbus="in{Nome}, id{inputId nameInput}, background-red"></div>
 
     <!-- Link para o arquivo JavaScript -->
     <script src="https://izaq-code.github.io/Nimbus/Nimbus.js"></script>
-</body>
+  </body>
 </html>
+
 ```
 
 ## Recursos
